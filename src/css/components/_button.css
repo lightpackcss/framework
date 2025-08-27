@@ -1,0 +1,288 @@
+/*
+  _button.modern.css
+  Semantic, accessible, and themeable button component styles.
+  Supports: primary, secondary, success, danger, warning, info, outline, ghost, disabled, and size variants.
+  Uses design tokens and natural palette from _variables.css.
+*/
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-400);
+  border-radius: var(--radius-md);
+  padding: var(--g-2) var(--g-4);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  background: none;
+}
+
+/* Primary */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--color-primary-dark);
+  color: var(--color-text-inverse);
+}
+.btn-primary:active {
+  background: var(--color-primary-light);
+}
+
+/* Secondary */
+.btn-secondary {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary-dark);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
+.btn-secondary:active {
+  background: var(--color-secondary-dark);
+  color: var(--color-text-inverse);
+}
+
+/* Success */
+.btn-success {
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+}
+.btn-success:hover,
+.btn-success:focus {
+  background: var(--color-success-dark);
+  color: var(--color-text-inverse);
+}
+.btn-success:active {
+  background: var(--color-success-light);
+  color: var(--color-text-inverse);
+}
+
+/* Danger */
+.btn-danger {
+  background: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background: var(--color-danger-dark);
+  color: var(--color-text-inverse);
+}
+.btn-danger:active {
+  background: var(--color-danger-light);
+  color: var(--color-text-inverse);
+}
+
+/* Warning */
+.btn-warning {
+  background: var(--color-warning);
+  color: var(--color-text-inverse);
+}
+.btn-warning:hover,
+.btn-warning:focus {
+  background: var(--color-warning-dark);
+  color: var(--color-text-inverse);
+}
+.btn-warning:active {
+  background: var(--color-warning-light);
+  color: var(--color-text-inverse);
+}
+
+/* Info */
+.btn-info {
+  background: var(--color-info);
+  color: var(--color-text-inverse);
+}
+.btn-info:hover,
+.btn-info:focus {
+  background: var(--color-info-dark);
+  color: var(--color-text-inverse);
+}
+.btn-info:active {
+  background: var(--color-info-light);
+  color: var(--color-text-inverse);
+}
+
+/* Outline variant */
+.btn-outline {
+  background: none;
+  color: inherit;
+  border: 1px solid currentColor;
+}
+
+.btn-primary.btn-outline {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-primary.btn-outline:hover,
+.btn-primary.btn-outline:focus,
+.btn-primary.btn-outline:active {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary.btn-outline {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.btn-secondary.btn-outline:hover,
+.btn-secondary.btn-outline:focus,
+.btn-secondary.btn-outline:active {
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-secondary);
+}
+
+.btn-success.btn-outline {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+.btn-success.btn-outline:hover,
+.btn-success.btn-outline:focus,
+.btn-success.btn-outline:active {
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+  border-color: var(--color-success);
+}
+
+.btn-danger.btn-outline {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+.btn-danger.btn-outline:hover,
+.btn-danger.btn-outline:focus,
+.btn-danger.btn-outline:active {
+  background: var(--color-danger);
+  color: var(--color-text-inverse);
+  border-color: var(--color-danger);
+}
+
+.btn-warning.btn-outline {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+.btn-warning.btn-outline:hover,
+.btn-warning.btn-outline:focus,
+.btn-warning.btn-outline:active {
+  background: var(--color-warning);
+  color: var(--color-text-inverse);
+  border-color: var(--color-warning);
+}
+
+.btn-info.btn-outline {
+  color: var(--color-info);
+  border-color: var(--color-info);
+}
+.btn-info.btn-outline:hover,
+.btn-info.btn-outline:focus,
+.btn-info.btn-outline:active {
+  background: var(--color-info);
+  color: var(--color-text-inverse);
+  border-color: var(--color-info);
+}
+
+/* Ghost variant */
+.btn-ghost {
+  background: none;
+  color: inherit;
+  border: none;
+}
+
+.btn-primary.btn-ghost {
+  color: var(--color-primary);
+}
+.btn-primary.btn-ghost:hover,
+.btn-primary.btn-ghost:focus,
+.btn-primary.btn-ghost:active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btn-secondary.btn-ghost {
+  color: var(--color-secondary);
+}
+.btn-secondary.btn-ghost:hover,
+.btn-secondary.btn-ghost:focus,
+.btn-secondary.btn-ghost:active {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
+
+.btn-success.btn-ghost {
+  color: var(--color-success);
+}
+.btn-success.btn-ghost:hover,
+.btn-success.btn-ghost:focus,
+.btn-success.btn-ghost:active {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.btn-danger.btn-ghost {
+  color: var(--color-danger);
+}
+.btn-danger.btn-ghost:hover,
+.btn-danger.btn-ghost:focus,
+.btn-danger.btn-ghost:active {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.btn-warning.btn-ghost {
+  color: var(--color-warning);
+}
+.btn-warning.btn-ghost:hover,
+.btn-warning.btn-ghost:focus,
+.btn-warning.btn-ghost:active {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.btn-info.btn-ghost {
+  color: var(--color-info);
+}
+.btn-info.btn-ghost:hover,
+.btn-info.btn-ghost:focus,
+.btn-info.btn-ghost:active {
+  background: var(--color-info-light);
+  color: var(--color-info);
+}
+
+/* Disabled state */
+.btn:disabled,
+.btn.disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* Sizes */
+.btn-sm {
+  font-size: var(--fs-sm);
+  padding: var(--g-1) var(--g-3);
+  border-radius: var(--radius-sm);
+}
+.btn-lg {
+  font-size: var(--fs-lg);
+  padding: var(--g-3) var(--g-5);
+  border-radius: var(--radius-lg);
+}
+
+/* Icon-only button */
+.btn-icon {
+  padding: var(--g-2);
+  width: 2.5em;
+  height: 2.5em;
+  justify-content: center;
+}

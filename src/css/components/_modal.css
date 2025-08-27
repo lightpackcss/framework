@@ -1,0 +1,97 @@
+/*
+  Modern Modal Component
+  ---------------------
+  Clean, accessible, and responsive modal for modern web apps.
+  Uses design tokens from _variables.css for color, spacing, and typography.
+*/
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 60, 90, 0.35);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: var(--g-6) var(--g-5);
+  animation: modal-in 0.18s cubic-bezier(.4,1.4,.7,1) both;
+}
+
+@keyframes modal-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(24px);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.02) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--g-2);
+  margin-bottom: var(--g-4);
+}
+
+.modal-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-700);
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  padding: 0.25em 0.5em;
+  transition: background 0.15s;
+}
+.modal-close:hover,
+.modal-close:focus {
+  background: var(--color-muted);
+  outline: none;
+}
+
+.modal-body {
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  margin-bottom: var(--g-5);
+}
+
+.modal-footer {
+  display: flex;
+  gap: var(--g-3);
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    padding: var(--g-4) var(--g-2);
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .modal-title {
+    font-size: var(--fs-base);
+  }
+}

@@ -1,0 +1,59 @@
+/*
+  Card Component (Modern)
+  Flexible, accessible, and visually appealing card styles for modern UI frameworks.
+  Supports: header, body, footer, media, shadow, border, hover, and custom variants.
+*/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+  color: var(--color-text);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  padding: var(--g-4);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-500);
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card-media {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 220px;
+  aspect-ratio: 16/9;
+  background: var(--color-muted);
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--g-4);
+  font-size: var(--fs-base);
+  line-height: var(--line-height-base);
+}
+
+.card-footer {
+  padding: var(--g-3) var(--g-4);
+  background: var(--color-background);
+  border-top: 1px solid var(--color-muted);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.card-shadowless {
+  box-shadow: none;
+}

@@ -1,0 +1,42 @@
+/*
+  Accordion Component (Modern, Design Token Based)
+  -----------------------------------------------
+  - Only uses variables from _variables.css
+  - Minimal, modern, border and shadow
+*/
+.accordion {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  background: var(--color-background);
+  overflow: hidden;
+}
+.accordion-item + .accordion-item {
+  border-top: 1px solid var(--color-muted);
+}
+.accordion-header {
+  padding: var(--g-3);
+  background: var(--color-background);
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-700);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.accordion-panel {
+  padding: var(--g-3) var(--g-4);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--fs-base);
+  display: none;
+  animation: fadeIn 0.25s;
+}
+.accordion-panel.open {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

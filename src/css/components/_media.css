@@ -1,0 +1,17 @@
+/*
+  Media Object Component
+  -------------------------------------
+*/
+.media {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--g-3);
+}
+
+.media-img {
+  flex: 0 0 auto;
+}
+
+.media-body {
+  flex: 1 1 0;
+}

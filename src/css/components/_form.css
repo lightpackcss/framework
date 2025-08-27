@@ -1,0 +1,208 @@
+/*
+  Form Component (Modern)
+  -------------------------------------
+  Comprehensive, accessible, and visually appealing form elements using only design tokens from _variables.css.
+  Includes: text inputs, textarea, select, checkbox, radio, switch, range, file, error/success, disabled, focus, group spacing, and responsive layouts.
+*/
+label {
+    display: block;
+    margin-bottom: var(--g-1);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-700);
+    color: var(--color-text);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--g-2);
+    background: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-base);
+    line-height: var(--line-height-base);
+    transition: border-color var(--transition-fast) var(--easing-base), box-shadow var(--transition-fast) var(--easing-base);
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+    outline: none;
+}
+
+input[disabled],
+textarea[disabled],
+select[disabled] {
+    background: var(--color-surface);
+    color: var(--color-muted);
+    border-color: var(--color-muted);
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+}
+
+/* Checkbox & Radio */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--color-primary);
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: var(--g-2);
+    vertical-align: middle;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-light);
+    background: var(--color-background);
+    transition: border-color var(--transition-fast) var(--easing-base);
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+    outline: 2px solid var(--color-primary-light);
+    outline-offset: 2px;
+}
+
+input[type="checkbox"][disabled],
+input[type="radio"][disabled] {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+}
+
+/* Switch (toggle) */
+.switch {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: var(--g-2);
+}
+
+.switch input[type="checkbox"][disabled]+.slider,
+.switch input[type="checkbox"][disabled] ~ .slider {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
+}
+
+.switch input[type="checkbox"] {
+    display: none;
+}
+
+.switch .slider {
+    width: 2.5em;
+    height: 1.3em;
+    background: var(--color-muted);
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: background var(--transition-fast) var(--easing-base);
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    width: 0.9em;
+    height: 0.9em;
+    background: var(--white);
+    border-radius: 50%;
+    transition: left var(--transition-fast) var(--easing-base);
+}
+
+.switch input[type="checkbox"]:checked+.slider {
+    background: var(--color-primary);
+}
+
+.switch input[type="checkbox"]:checked+.slider:before {
+    left: 1.4em;
+}
+
+/* Range */
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--blue);
+    margin: var(--g-2) 0;
+}
+
+/* File input */
+input[type="file"] {
+    font-size: var(--fs-sm);
+    color: var(--gray-dark);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--g-2);
+    width: 100%;
+}
+
+/* Select arrow (for consistent look) */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' stroke='%2364748b' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--g-3) center;
+    background-size: 1.2em;
+    padding-right: 2.5em;
+}
+
+/* Grouped input (input + button, etc) */
+.input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-group>*:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group>*:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Required asterisk */
+label.required:after {
+    content: "*";
+    color: var(--color-danger);
+    margin-left: 0.25em;
+    font-size: var(--fs-base);
+}
+
+/* Inline form elements */
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--g-3);
+    align-items: center;
+}
+
+.form-inline label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+/* Responsive form layout */
+@media (max-width: 640px) {
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--g-2);
+    }
+}

@@ -1,0 +1,25 @@
+/*
+  Badge Component (Modern, Semantic, Design Token Based)
+  -----------------------------------------------------
+  - Uses only variables from _variables.css
+  - Semantic color classes: .badge-success, .badge-error, .badge-warning, .badge-info, .badge-neutral, .badge-primary, .badge-secondary
+*/
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  font-size: var(--fs-sm);
+  line-height: 1;
+  vertical-align: middle;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.badge-success    { background: var(--color-success-light); color: var(--color-success-dark); }
+.badge-danger      { background: var(--color-danger-light); color: var(--color-danger-dark); }
+.badge-warning    { background: var(--color-warning-light); color: var(--color-warning-dark); }
+.badge-info       { background: var(--color-info-light); color: var(--color-info-dark); }
+.badge-muted    { background: var(--color-muted); color: var(--color-text); }
+.badge-primary    { background: var(--color-primary); color: var(--color-text-inverse); }
+.badge-secondary  { background: var(--color-secondary); color: var(--color-text-inverse); }

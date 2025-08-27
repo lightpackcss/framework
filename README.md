@@ -6,6 +6,8 @@ No compilers. No fuss. Just Native CSS + JavaScript components that work — fro
 
 This project is a modern, modular CSS framework with zero build dependencies for consumers. Use the CSS and JS directly in the browser, or integrate with your build pipeline.
 
+> **⚠️ This project is currently in beta. Breaking changes and deprecated CSS may be introduced as the framework evolves.**
+
 ---
 
 

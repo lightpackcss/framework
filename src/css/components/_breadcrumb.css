@@ -1,0 +1,28 @@
+/*
+  Breadcrumb Component (Modern, Design Token Based)
+  -----------------------------------------------
+  - Uses only variables from _variables.css
+  - Minimal, clean, with separator and hover effect
+*/
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--g-2);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.breadcrumb a:hover {
+  color: var(--color-primary-dark);
+}
+.breadcrumb-sep {
+  color: var(--color-muted);
+  user-select: none;
+}
+.breadcrumb-current {
+  color: var(--color-text);
+}

@@ -1,0 +1,65 @@
+/*
+  Progress Bar Component
+  -------------------------------------
+*/
+.progress {
+  background: var(--gray-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 1rem;
+  width: 100%;
+  margin-bottom: var(--g-3);
+}
+
+.progress-thin {
+  height: 0.5rem;
+}
+
+.progress-bar {
+  background: var(--blue);
+  height: 100%;
+  width: 0;
+  transition: width 0.4s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: var(--fs-xs);
+  overflow: hidden;
+}
+
+.progress-bar-success {
+  background: var(--color-success);
+  color: var(--white);
+}
+
+.progress-bar-danger {
+  background: var(--color-danger);
+  color: var(--white);
+}
+
+.progress-bar-warning {
+  background: var(--color-warning);
+  color: var(--white);
+}
+
+.progress-bar-primary {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.progress-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.progress-bar-striped {
+  background-image: repeating-linear-gradient(45deg, rgb(255 255 255 / 15%) 0 10px, transparent 10px 20px);
+}

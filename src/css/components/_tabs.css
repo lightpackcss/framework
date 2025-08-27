@@ -1,0 +1,28 @@
+/*
+  Tabs Component (Strict Design Tokens)
+  -------------------------------------
+*/
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-muted);
+  gap: var(--g-2);
+  margin-bottom: var(--g-3);
+}
+
+.tab {
+  padding: var(--g-2) var(--g-3);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: var(--fs-base);
+  cursor: pointer;
+  color: var(--color-text);
+  font-weight: 400;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.tab.tab-active {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  font-weight: var(--fw-700);
+}

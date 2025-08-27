@@ -1,0 +1,63 @@
+/*
+  Pagination Component
+  -------------------------------------
+  Usage:
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      ...
+    </ul>
+*/
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: var(--g-3) 0;
+}
+
+.page-link {
+  display: block;
+  background: var(--color-background);
+  color: var(--blue);
+  border: 1px solid var(--color-muted);
+  text-decoration: none;
+  font-weight: var(--fw-400);
+  transition: background 0.2s, color 0.2s;
+  padding: 0.25em 1em;
+  font-size: var(--fs-sm);
+}
+
+.pagination .page-item:first-child .page-link {
+  border-top-left-radius: .25rem !important;
+  border-bottom-left-radius: .25rem !important;
+}
+
+.pagination .page-item:last-child .page-link {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+
+.pagination .page-item:not(:first-child) .page-link {
+  margin-left: -1px;
+}
+
+.page-link:hover {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.page-link.active {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.page-item.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  border-color: var(--color-border-dark);
+}
+
+.page-item.disabled .page-link {
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+}

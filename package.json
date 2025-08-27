@@ -1,13 +1,12 @@
 {
-  "name": "@pradeep-tiwari/lightpack-css-framework",
   "version": "0.1.0-beta",
   "description": "No compilers. No fuss. Just Native CSS + JavaScript components that work — from themes to tabs, toasts, drawers & more.",
-  "author": "Pradeep Tiwari <your-email@example.com>",
+  "author": "Pradeep Tiwari",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pradeep-tiwari/lightpack-css-framework.git"
+    "url": "https://github.com/lightpackcss/framework.git"
   },
-  "homepage": "https://github.com/pradeep-tiwari/lightpack-css-framework",
+  "homepage": "https://github.com/lightpackcss/framework",
   "keywords": [
     "css",
     "framework",
@@ -23,9 +22,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "postcss src/css/main.css -o dist/lightpack.css",
-    "build:min": "postcss src/css/main.css -o dist/lightpack.min.css --env production",
-    "lint:css": "stylelint \"src/**/*.css\"",
+    "build": "npm run build:css && npm run build:css:min && npm run build:js && npm run build:js:min",
+    "build:css": "postcss src/css/main.css -o dist/lightpack.css",
+    "build:css:min": "postcss src/css/main.css -o dist/lightpack.min.css --env production",
+    "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
+    "format": "prettier --write .",
+    "format:css": "prettier --write \"src/**/*.css\"",
+    "format:js": "prettier --write \"src/**/*.js\"",
     "build:js:min": "terser src/js/lightpack.js -o dist/lightpack.min.js --compress --mangle",
     "build:js": "cp src/js/lightpack.js dist/lightpack.js"
   },
@@ -35,9 +38,9 @@
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
+    "prettier": "^3.6.2",
     "stylelint": "^16.23.1",
     "stylelint-config-standard": "^39.0.0",
     "terser": "^5.43.1"
   }
 }
-

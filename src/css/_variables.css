@@ -1,0 +1,200 @@
+/*
+  Variables: Colors, Typography, Spacing, Border Radius
+  -------------------------------------
+  All CSS custom properties (variables) for theming and design tokens.
+*/
+:root {
+  /* Colors */
+  --red: #ef4444;
+  --red-light: #fca5a5;
+  --red-lighter: #fee2e2;
+  --red-dark: #b91c1c;
+  --pink: #ec4899;
+  --pink-light: #f9a8d4;
+  --pink-lighter: #fdf2f8;
+  --pink-dark: #be185d;
+  --orange: #f59e42;
+  --orange-light: #fdba74;
+  --orange-lighter: #fff7ed;
+  --orange-dark: #b45309;
+  --yellow: #fde047;
+  --yellow-light: #fef9c3;
+  --yellow-lighter: #fefce8;
+  --yellow-dark: #a16207;
+  --green: #22c55e;
+  --green-light: #86efac;
+  --green-lighter: #f0fdf4;
+  --green-dark: #15803d;
+  --teal: #14b8a6;
+  --teal-light: #5eead4;
+  --teal-lighter: #f0fdfa;
+  --teal-dark: #0f766e;
+  --blue: #2563eb;
+  --blue-light: #93c5fd;
+  --blue-lighter: #eff6ff;
+  --blue-dark: #1e40af;
+  --indigo: #6366f1;
+  --indigo-light: #a5b4fc;
+  --indigo-lighter: #eef2ff;
+  --indigo-dark: #3730a3;
+  --purple: #a21caf;
+  --purple-light: #e9d5ff;
+  --purple-lighter: #faf5ff;
+  --purple-dark: #6d28d9;
+  --brown: #a16207;
+  --brown-light: #fef3c7;
+  --brown-lighter: #fffbeb;
+  --brown-dark: #78350f;
+  --gray: #64748b;
+  --gray-light: #e2e8f0;
+  --gray-lighter: #f8fafc;
+  --gray-dark: #334155;
+  --black: #000;
+  --black-light: #334155;
+  --black-dark: #0f172a;
+  --white-light: #f8fafc;
+  --white: #fff;
+  --muted: #f1f5f9;
+
+  /* Semantic Color Palette */
+  --color-primary-lighter: var(--blue-lighter);
+  --color-primary-light: var(--blue-light);
+  --color-primary: var(--blue);
+  --color-primary-dark: var(--blue-dark);
+
+  --color-secondary-lighter: var(--indigo-lighter);
+  --color-secondary-light: var(--indigo-light);
+  --color-secondary: var(--indigo);
+  --color-secondary-dark: var(--indigo-dark);
+
+  --color-success-lighter: var(--green-lighter);
+  --color-success-light: var(--green-light);
+  --color-success: var(--green);
+  --color-success-dark: var(--green-dark);
+
+  --color-warning-lighter: var(--orange-lighter);
+  --color-warning-light: var(--orange-light);
+  --color-warning: var(--orange);
+  --color-warning-dark: var(--orange-dark);
+
+  --color-danger-lighter: var(--red-lighter);
+  --color-danger-light: var(--red-light);
+  --color-danger: var(--red);
+  --color-danger-dark: var(--red-dark);
+
+  --color-info-lighter: var(--teal-lighter);
+  --color-info-light: var(--teal-light);
+  --color-info: var(--teal);
+  --color-info-dark: var(--teal-dark);
+
+  --color-accent-lighter: var(--purple-lighter);
+  --color-accent-light: var(--purple-light);
+  --color-accent: var(--purple);
+  --color-accent-dark: var(--purple-dark);
+
+  --color-background: var(--white);
+  --color-surface: var(--muted);
+  --color-surface-dark: var(--black-dark);
+  --color-surface-alt: var(--gray-lighter);
+  --color-border: var(--gray-light);
+  --color-border-dark: var(--gray-dark);
+  --color-muted: var(--muted);
+  --color-text: var(--gray-dark);
+  --color-text-muted: var(--gray);
+  --color-text-inverse: var(--white);
+
+  /*
+    =============================
+    Theme Overrides
+    =============================
+    To enable theming, override only semantic color variables inside theme classes.
+    Example: Add .theme-dark to <body> to activate dark mode.
+  */
+
+  /* Dark Theme */
+  .theme-dark {
+    --color-background: var(--black-dark);
+    --color-surface: var(--gray-dark);
+    --color-surface-dark: var(--black);
+    --color-surface-alt: var(--gray);
+    --color-border: var(--gray);
+    --color-border-dark: var(--gray-light);
+    --color-muted: var(--gray);
+    --color-text: var(--white);
+    --color-text-muted: var(--gray-light);
+    --color-text-inverse: var(--black);
+  }
+
+  /* Typography */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 3rem;
+
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --line-height-base: 1.6;
+
+  /* Gappings */
+  --g-1: 0.25rem;
+  --g-2: 0.5rem;
+  --g-3: 1rem;
+  --g-4: 1.5rem;
+  --g-5: 2rem;
+  --g-6: 3rem;
+  --g-7: 4rem;
+  --g-8: 6rem;
+  --g-9: 8rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Z-Index Scale */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+
+  /* Transition & Easing */
+  --transition-fast: 0.15s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.5s;
+  --easing-base: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+
+  /* Opacity */
+  --opacity-disabled: 0.5;
+  --opacity-overlay: 0.8;
+
+  /* Container Widths */
+  --container-xs: 320px;
+  --container-sm: 480px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}

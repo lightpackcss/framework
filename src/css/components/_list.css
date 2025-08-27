@@ -1,0 +1,13 @@
+/*
+  List Component
+  -------------------------------------
+*/
+.list {
+  padding-left: var(--g-4);
+  margin-bottom: var(--g-3);
+}
+
+.list li {
+  margin-bottom: var(--g-1);
+  line-height: var(--line-height-base);
+}

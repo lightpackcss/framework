@@ -1,0 +1,58 @@
+/*
+  Stepper Component
+  -------------------------------------
+*/
+.stepper {
+  display: flex;
+  gap: var(--g-3);
+  margin-bottom: var(--g-3);
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: var(--fw-700);
+}
+
+.step-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-muted);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-weight: var(--fw-700);
+  font-size: var(--fs-sm);
+  transition: background 0.2s;
+}
+
+.step-active .step-circle {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.step-active {
+  color: var(--color-primary);
+  font-weight: var(--fw-700);
+}
+
+.step-label {
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+}
+
+.step-line {
+  flex: 1 1 0;
+  height: 2px;
+  background: var(--color-muted);
+  margin: 0 0.5rem;
+}
+
+.step-active ~ .step-line {
+  background: var(--color-primary);
+}

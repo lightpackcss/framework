@@ -11,7 +11,7 @@
   content: attr(data-tooltip);
   position: absolute;
   left: 50%;
-  bottom: 125%;
+  bottom: 120%;
   transform: translateX(-50%);
   background: var(--color-surface);
   color: var(--color-text);
@@ -30,22 +30,4 @@
 .tooltip[data-tooltip]:focus::after {
   opacity: 1;
   pointer-events: auto;
-}
-
-.tooltip[data-tooltip]::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 115%;
-  transform: translateX(-50%);
-  border: 6px solid transparent;
-  border-top-color: var(--color-surface-dark);
-  opacity: 0;
-  transition: opacity 0.18s;
-  z-index: 11;
-}
-
-.tooltip[data-tooltip]:hover::before,
-.tooltip[data-tooltip]:focus::before {
-  opacity: 1;
 }

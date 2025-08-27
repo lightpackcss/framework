@@ -37,15 +37,15 @@ This project is a modern, modular CSS framework with zero build dependencies for
 ### CDN
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@0.1.0-beta/dist/lightpack.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@latest/dist/lightpack.min.css">
 
 <!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@0.1.0-beta/dist/lightpack.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@latest/dist/lightpack.min.js"></script>
 ```
 
 ### npm
 ```sh
-npm install @lightpackcss/framework@0.1.0-beta
+npm install @lightpackcss/framework
 ```
 
 ---

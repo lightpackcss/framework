@@ -12,13 +12,7 @@ label {
     color: var(--color-text);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="search"],
-input[type="url"],
-input[type="tel"],
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
     width: 100%;
@@ -33,13 +27,7 @@ select {
     box-sizing: border-box;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="url"]:focus,
-input[type="tel"]:focus,
+input:not([type="checkbox"]):not([type="radio"]):focus,
 textarea:focus,
 select:focus {
     border-color: var(--color-primary);
@@ -57,13 +45,21 @@ select[disabled] {
     cursor: not-allowed;
 }
 
+/* Small variant for form controls */
+input.input-sm,
+select.input-sm,
+textarea.input-sm {
+    padding: var(--g-1);
+    font-size: var(--fs-sm);
+    border-radius: var(--radius-sm);
+}
+
 /* Checkbox & Radio */
 input[type="checkbox"],
 input[type="radio"] {
     accent-color: var(--color-primary);
     width: 1.1em;
     height: 1.1em;
-    margin-right: var(--g-2);
     vertical-align: middle;
     border-radius: var(--radius-sm);
     border: 1px solid var(--gray-light);

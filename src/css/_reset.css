@@ -65,6 +65,10 @@ img, picture {
   display: block;
 }
 
+img, picture, svg {
+  vertical-align: middle;
+}
+
 input, button, textarea, select {
   font: inherit;
 }

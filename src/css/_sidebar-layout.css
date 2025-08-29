@@ -1,0 +1,40 @@
+/*
+  Sidebar Layout Utilities
+  - Generic left sidebar/right main split
+  - Responsive
+  - Customizable width via --sidebar-width
+*/
+
+.sidebar-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sidebar-layout .sidebar {
+  width: var(--sidebar-width, 270px);
+  min-width: 180px;
+  max-width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-layout .main {
+  flex: 1 1 0%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .sidebar-layout {
+    flex-direction: column;
+  }
+
+  .sidebar-layout .sidebar {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+  }
+}

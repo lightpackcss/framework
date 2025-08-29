@@ -122,7 +122,7 @@
     --color-muted: var(--gray);
     --color-text: var(--white);
     --color-text-muted: var(--gray-light);
-    --color-text-inverse: var(--black);
+    --color-primary: #3068d2;
   }
 
   /* Typography */

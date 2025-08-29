@@ -262,25 +262,49 @@
       items.forEach(function (item) {
         const toggle = item.querySelector('.collapse-toggle');
         const content = item.querySelector('.collapse-content');
+        const indicator = toggle && toggle.querySelector('.collapse-indicator');
+        // Helper to update indicator
+        function updateIndicator(isOpen) {
+          if (!indicator) return;
+          indicator.classList.toggle('open', isOpen);
+          // Use custom text if provided, else default to +/-
+          const openVal = indicator.dataset.open || '-';
+          const closedVal = indicator.dataset.closed || '+';
+          indicator.textContent = isOpen ? openVal : closedVal;
+        }
+        // Set initial state
+        updateIndicator(content.classList.contains('open'));
         if (!toggle || !content) return;
         toggle.addEventListener('click', function () {
           const isOpen = content.classList.contains('open');
           if (mode === 'accordion') {
             // Close all
-            collapsible.querySelectorAll('.collapse-content').forEach(p => p.classList.remove('open'));
+            collapsible.querySelectorAll('.collapse-content').forEach(p => {
+              p.classList.remove('open');
+              const t = p.parentElement.querySelector('.collapse-toggle');
+              const i = t && t.querySelector('.collapse-indicator');
+              if (i) {
+                i.classList.remove('open');
+                const closedVal = i.dataset.closed || '+';
+                i.textContent = closedVal;
+              }
+            });
             collapsible.querySelectorAll('.collapse-toggle').forEach(h => h.classList.remove('open'));
             if (!isOpen) {
               content.classList.add('open');
               toggle.classList.add('open');
+              updateIndicator(true);
             }
           } else {
             content.classList.toggle('open');
             toggle.classList.toggle('open');
+            updateIndicator(!isOpen);
           }
         });
       });
     });
   };
+
 
   // Master init
   Lightpack.initAll = function (root = document) {

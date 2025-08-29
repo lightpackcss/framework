@@ -223,6 +223,25 @@
 .d-inline { display: inline !important; }
 .d-inline-block { display: inline-block !important; }
 .d-none { display: none !important; }
+
+/* Responsive Display Utilities */
+@media (min-width: var(--breakpoint-sm)) {
+  .d-block-sm { display: block !important; }
+  .d-none-sm { display: none !important; }
+}
+@media (min-width: var(--breakpoint-md)) {
+  .d-block-md { display: block !important; }
+  .d-none-md { display: none !important; }
+}
+@media (min-width: var(--breakpoint-lg)) {
+  .d-block-lg { display: block !important; }
+  .d-none-lg { display: none !important; }
+}
+@media (min-width: var(--breakpoint-xl)) {
+  .d-block-xl { display: block !important; }
+  .d-none-xl { display: none !important; }
+}
+
 .visibility-hidden { visibility: hidden !important; }
 .visibility-visible { visibility: visible !important; }
 .static { position: static !important; }

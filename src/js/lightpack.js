@@ -1,11 +1,11 @@
 /*
  * Lightpack JS Library for dynamic css components.
  */
-(function(window) {
+(function (window) {
   const Lightpack = window.Lightpack = window.Lightpack || {};
 
   // Tabs
-  Lightpack.initTabs = function(root = document) {
+  Lightpack.initTabs = function (root = document) {
     root.querySelectorAll('.tabs-group').forEach(function (group) {
       const tabs = group.querySelectorAll('.tabs .tab');
       const panels = Array.from(group.children).filter(
@@ -23,7 +23,7 @@
   };
 
   // Accordion
-  Lightpack.initAccordions = function(root = document) {
+  Lightpack.initAccordions = function (root = document) {
     root.querySelectorAll('.accordion').forEach(function (accordion) {
       const headers = accordion.querySelectorAll('.accordion-header');
       const panels = accordion.querySelectorAll('.accordion-panel');
@@ -42,7 +42,7 @@
   };
 
   // Alerts (close buttons)
-  Lightpack.initAlerts = function(root = document) {
+  Lightpack.initAlerts = function (root = document) {
     root.addEventListener('click', function (e) {
       if (e.target.classList.contains('alert-close')) {
         const alert = e.target.closest('.alert');
@@ -73,7 +73,7 @@
     return container;
   }
 
-  Lightpack.showToast = function(options) {
+  Lightpack.showToast = function (options) {
     if (!options || typeof options !== 'object') return;
     const id = ++toastId;
     const msg = options.message || '';
@@ -90,17 +90,17 @@
       <span>${msg}</span>
       <button class="toast-close" title="Close">×</button>
     `;
-    toast.querySelector('.toast-close').onclick = function() {
+    toast.querySelector('.toast-close').onclick = function () {
       Lightpack.removeToast(id, pos);
     };
     container.appendChild(toast);
     if (!sticky) {
-      toast._timeout = setTimeout(function() {
+      toast._timeout = setTimeout(function () {
         Lightpack.removeToast(id, pos);
       }, 5000);
     }
   };
-  Lightpack.removeToast = function(id, pos) {
+  Lightpack.removeToast = function (id, pos) {
     const container = document.getElementById('toast-container-' + (pos || 'bottom-right'));
     const toast = container && container.querySelector(`[data-toast-id='${id}']`);
     if (toast) {
@@ -116,21 +116,21 @@
     }
   };
   // Modal (multi-modal support)
-  Lightpack.initModals = function(root = document) {
+  Lightpack.initModals = function (root = document) {
     // Open modal buttons: <button data-modal-open="modalId">
-    root.querySelectorAll('[data-modal-open]').forEach(function(btn) {
+    root.querySelectorAll('[data-modal-open]').forEach(function (btn) {
       const modalId = btn.getAttribute('data-modal-open');
       const backdrop = root.querySelector('.modal-backdrop[data-modal="' + modalId + '"]');
       if (!backdrop) return;
       const modal = backdrop.querySelector('.modal');
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         backdrop.style.display = 'flex';
         if (modal) modal.focus();
         document.body.style.overflow = 'hidden';
       });
     });
     // Close/cancel buttons inside modal: <button data-modal-close> or <button data-modal-cancel>
-    root.querySelectorAll('.modal-backdrop').forEach(function(backdrop) {
+    root.querySelectorAll('.modal-backdrop').forEach(function (backdrop) {
       const modal = backdrop.querySelector('.modal');
       const closeBtns = backdrop.querySelectorAll('[data-modal-close], .modal-close');
       const cancelBtns = backdrop.querySelectorAll('[data-modal-cancel]');
@@ -141,10 +141,10 @@
       }
       closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
       cancelBtns.forEach(btn => btn.addEventListener('click', closeModal));
-      backdrop.addEventListener('click', function(e) {
+      backdrop.addEventListener('click', function (e) {
         if (e.target === backdrop) closeModal();
       });
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', function (e) {
         if (backdrop.style.display === 'flex' && e.key === 'Escape') closeModal();
       });
     });
@@ -156,9 +156,9 @@
    * User controls markup and icon. JS only toggles input type and .showing class.
    * Usage: <input type="password"> <button type="button" class="toggle-password"><i class="fa fa-eye"></i></button>
    */
-  Lightpack.initPasswordToggles = function(root = document) {
-    root.querySelectorAll('input[type="password"] + .toggle-password').forEach(function(btn) {
-      btn.addEventListener('click', function() {
+  Lightpack.initPasswordToggles = function (root = document) {
+    root.querySelectorAll('input[type="password"] + .toggle-password').forEach(function (btn) {
+      btn.addEventListener('click', function () {
         const input = btn.previousElementSibling;
         if (!input || (input.type !== 'password' && input.type !== 'text')) return;
         const showing = input.type === 'text';
@@ -178,22 +178,22 @@
    *   <div class="drawer-backdrop" ... onclick="closeDrawer()"></div>
    *   <button data-drawer-close>×</button>
    */
-  Lightpack.initDrawers = function(root = document) {
+  Lightpack.initDrawers = function (root = document) {
     // Open triggers: <button data-drawer-open="drawerId">
-    root.querySelectorAll('[data-drawer-open]').forEach(function(btn) {
+    root.querySelectorAll('[data-drawer-open]').forEach(function (btn) {
       const drawerId = btn.getAttribute('data-drawer-open');
       const drawer = root.querySelector('.drawer#' + drawerId);
       if (!drawer) return;
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         drawer.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
     });
     // Close triggers: inside drawer, anything with [data-drawer-close]
-    root.querySelectorAll('.drawer').forEach(function(drawer) {
+    root.querySelectorAll('.drawer').forEach(function (drawer) {
       // Close buttons
-      drawer.querySelectorAll('[data-drawer-close]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
+      drawer.querySelectorAll('[data-drawer-close]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
           drawer.classList.remove('open');
           document.body.style.overflow = '';
         });
@@ -201,13 +201,13 @@
       // Backdrop
       const backdrop = drawer.querySelector('.drawer-backdrop');
       if (backdrop) {
-        backdrop.addEventListener('click', function() {
+        backdrop.addEventListener('click', function () {
           drawer.classList.remove('open');
           document.body.style.overflow = '';
         });
       }
       // ESC to close
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', function (e) {
         if (drawer.classList.contains('open') && e.key === 'Escape') {
           drawer.classList.remove('open');
           document.body.style.overflow = '';
@@ -228,7 +228,7 @@
    * Lightpack.setTheme('') or Lightpack.setTheme(null) disables dark mode (removes class).
    * Lightpack.toggleTheme() toggles dark mode only.
    */
-  Lightpack.setTheme = function(theme) {
+  Lightpack.setTheme = function (theme) {
     if (theme === 'theme-dark') {
       document.body.classList.add('theme-dark');
       localStorage.setItem('lightpack-theme', 'theme-dark');
@@ -237,7 +237,7 @@
       localStorage.removeItem('lightpack-theme');
     }
   };
-  Lightpack.toggleTheme = function() {
+  Lightpack.toggleTheme = function () {
     if (document.body.classList.contains('theme-dark')) {
       Lightpack.setTheme('');
     } else {
@@ -246,7 +246,7 @@
   };
 
   // Theme init (modular)
-  Lightpack.initTheme = function() {
+  Lightpack.initTheme = function () {
     const savedTheme = localStorage.getItem('lightpack-theme');
     if (savedTheme === 'theme-dark') {
       document.body.classList.add('theme-dark');
@@ -255,8 +255,63 @@
     }
   };
 
+  Lightpack.initCollapsibles = function (root = document) {
+    root.querySelectorAll('.collapsible').forEach(function (collapsible) {
+      const mode = collapsible.getAttribute('data-collapse') || 'multi';
+      const items = collapsible.querySelectorAll('.collapse-item');
+      items.forEach(function (item) {
+        const toggle = item.querySelector('.collapse-toggle');
+        const content = item.querySelector('.collapse-content');
+        const indicator = toggle && toggle.querySelector('.collapse-indicator');
+        // Helper to update indicator
+        function updateIndicator(isOpen) {
+          if (!indicator) return;
+          indicator.classList.toggle('open', isOpen);
+          // Only set textContent if indicator is text-only (no children)
+          if (indicator.childElementCount === 0) {
+            const openVal = indicator.dataset.open || '-';
+            const closedVal = indicator.dataset.closed || '+';
+            indicator.textContent = isOpen ? openVal : closedVal;
+          }
+        }
+        // Set initial state
+        updateIndicator(content.classList.contains('open'));
+        if (!toggle || !content) return;
+        toggle.addEventListener('click', function () {
+          const isOpen = content.classList.contains('open');
+          if (mode === 'accordion') {
+            // Close all
+            collapsible.querySelectorAll('.collapse-content').forEach(p => {
+              p.classList.remove('open');
+              const t = p.parentElement.querySelector('.collapse-toggle');
+              const i = t && t.querySelector('.collapse-indicator');
+              if (i) {
+                i.classList.remove('open');
+                if (i.childElementCount === 0) {
+                  const closedVal = i.dataset.closed || '+';
+                  i.textContent = closedVal;
+                }
+              }
+            });
+            collapsible.querySelectorAll('.collapse-toggle').forEach(h => h.classList.remove('open'));
+            if (!isOpen) {
+              content.classList.add('open');
+              toggle.classList.add('open');
+              updateIndicator(true);
+            }
+          } else {
+            content.classList.toggle('open');
+            toggle.classList.toggle('open');
+            updateIndicator(!isOpen);
+          }
+        });
+      });
+    });
+  };
+
+
   // Master init
-  Lightpack.initAll = function(root = document) {
+  Lightpack.initAll = function (root = document) {
     Lightpack.initTheme();
     Lightpack.initTabs(root);
     Lightpack.initAccordions(root);
@@ -264,6 +319,7 @@
     Lightpack.initModals(root);
     Lightpack.initPasswordToggles(root);
     Lightpack.initDrawers(root);
+    Lightpack.initCollapsibles(root);
     // ...add more initializers here as needed
   };
 

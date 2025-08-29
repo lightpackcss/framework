@@ -1,0 +1,35 @@
+/*
+  Collapsible Component (Unstyled, Generic)
+  ----------------------------------------
+  - Purely for collapsing/expanding any content
+  - No visual styling, only handles show/hide
+
+  Usage:
+    <div class="collapsible" data-collapse="multi|accordion">
+      <div class="collapse-item">
+        <button class="collapse-toggle">Section 1</button>
+        <div class="collapse-content">Section 1 content</div>
+      </div>
+      <div class="collapse-item">
+        <button class="collapse-toggle">Section 2</button>
+        <div class="collapse-content">Section 2 content</div>
+      </div>
+    </div>
+  - data-collapse="multi" (default): multiple sections can be open
+  - data-collapse="accordion": only one section open at a time
+*/
+.collapse-content {
+    display: none;
+}
+
+.collapse-content.open {
+    display: block;
+}
+
+.collapse-indicator .collapse-icon {
+    transition: transform 0.2s;
+}
+
+.collapse-indicator.open .collapse-icon {
+    transform: rotate(90deg);
+}

@@ -668,48 +668,48 @@
 .list-decimal { list-style: decimal !important; }
 
 /* Semantic Background Utilities */
-.bg-primary { background-color: var(--color-primary) !important; color: #fff !important; }
-.bg-primary-light { background-color: var(--color-primary-light) !important; color: #fff !important; }
-.bg-primary-lighter { background-color: var(--color-primary-lighter) !important; color: #000 !important; }
-.bg-primary-dark { background-color: var(--color-primary-dark) !important; color: #fff !important; }
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-primary-light { background-color: var(--color-primary-light) !important; }
+.bg-primary-lighter { background-color: var(--color-primary-lighter) !important; }
+.bg-primary-dark { background-color: var(--color-primary-dark) !important; }
 
-.bg-secondary { background-color: var(--color-secondary) !important; color: #fff !important; }
-.bg-secondary-light { background-color: var(--color-secondary-light) !important; color: #fff !important; }
-.bg-secondary-lighter { background-color: var(--color-secondary-lighter) !important; color: #000 !important; }
-.bg-secondary-dark { background-color: var(--color-secondary-dark) !important; color: #fff !important; }
+.bg-secondary { background-color: var(--color-secondary) !important; }
+.bg-secondary-light { background-color: var(--color-secondary-light) !important; }
+.bg-secondary-lighter { background-color: var(--color-secondary-lighter) !important; }
+.bg-secondary-dark { background-color: var(--color-secondary-dark) !important; }
 
-.bg-success { background-color: var(--color-success) !important; color: #fff !important; }
-.bg-success-light { background-color: var(--color-success-light) !important; color: #fff !important; }
-.bg-success-lighter { background-color: var(--color-success-lighter) !important; color: #000 !important; }
-.bg-success-dark { background-color: var(--color-success-dark) !important; color: #fff !important; }
+.bg-success { background-color: var(--color-success) !important; }
+.bg-success-light { background-color: var(--color-success-light) !important; }
+.bg-success-lighter { background-color: var(--color-success-lighter) !important; }
+.bg-success-dark { background-color: var(--color-success-dark) !important; }
 
-.bg-warning { background-color: var(--color-warning) !important; color: #000 !important; }
-.bg-warning-light { background-color: var(--color-warning-light) !important; color: #000 !important; }
-.bg-warning-lighter { background-color: var(--color-warning-lighter) !important; color: #000 !important; }
-.bg-warning-dark { background-color: var(--color-warning-dark) !important; color: #fff !important; }
+.bg-warning { background-color: var(--color-warning) !important; }
+.bg-warning-light { background-color: var(--color-warning-light) !important; }
+.bg-warning-lighter { background-color: var(--color-warning-lighter) !important; }
+.bg-warning-dark { background-color: var(--color-warning-dark) !important; }
 
-.bg-danger { background-color: var(--color-danger) !important; color: #fff !important; }
-.bg-danger-light { background-color: var(--color-danger-light) !important; color: #fff !important; }
-.bg-danger-lighter { background-color: var(--color-danger-lighter) !important; color: #000 !important; }
-.bg-danger-dark { background-color: var(--color-danger-dark) !important; color: #fff !important; }
+.bg-danger { background-color: var(--color-danger) !important; }
+.bg-danger-light { background-color: var(--color-danger-light) !important; }
+.bg-danger-lighter { background-color: var(--color-danger-lighter) !important; }
+.bg-danger-dark { background-color: var(--color-danger-dark) !important; }
 
-.bg-info { background-color: var(--color-info) !important; color: #fff !important; }
-.bg-info-light { background-color: var(--color-info-light) !important; color: #fff !important; }
-.bg-info-lighter { background-color: var(--color-info-lighter) !important; color: #000 !important; }
-.bg-info-dark { background-color: var(--color-info-dark) !important; color: #fff !important; }
+.bg-info { background-color: var(--color-info) !important; }
+.bg-info-light { background-color: var(--color-info-light) !important; }
+.bg-info-lighter { background-color: var(--color-info-lighter) !important; }
+.bg-info-dark { background-color: var(--color-info-dark) !important; }
 
-.bg-accent { background-color: var(--color-accent) !important; color: #fff !important; }
-.bg-accent-light { background-color: var(--color-accent-light) !important; color: #fff !important; }
-.bg-accent-lighter { background-color: var(--color-accent-lighter) !important; color: #000 !important; }
-.bg-accent-dark { background-color: var(--color-accent-dark) !important; color: #fff !important; }
+.bg-accent { background-color: var(--color-accent) !important; }
+.bg-accent-light { background-color: var(--color-accent-light) !important; }
+.bg-accent-lighter { background-color: var(--color-accent-lighter) !important; }
+.bg-accent-dark { background-color: var(--color-accent-dark) !important; }
 
-.bg-background { background-color: var(--color-background) !important; color: #000 !important; }
-.bg-surface { background-color: var(--color-surface) !important; color: #000 !important; }
-.bg-surface-dark { background-color: var(--color-surface-dark) !important; color: #fff !important; }
-.bg-surface-alt { background-color: var(--color-surface-alt) !important; color: #000 !important; }
-.bg-border { background-color: var(--color-border) !important; color: #000 !important; }
-.bg-border-dark { background-color: var(--color-border-dark) !important; color: #fff !important; }
-.bg-muted { background-color: var(--color-muted) !important; color: #000 !important; }
+.bg-background { background-color: var(--color-background) !important; }
+.bg-surface { background-color: var(--color-surface) !important; }
+.bg-surface-dark { background-color: var(--color-surface-dark) !important; }
+.bg-surface-alt { background-color: var(--color-surface-alt) !important; }
+.bg-border { background-color: var(--color-border) !important; }
+.bg-border-dark { background-color: var(--color-border-dark) !important; }
+.bg-muted { background-color: var(--color-muted) !important; }
 
 /* Semantic Text Utilities */
 .text-primary { color: var(--color-primary) !important; }

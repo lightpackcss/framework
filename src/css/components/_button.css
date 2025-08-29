@@ -6,9 +6,8 @@
 */
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  vertical-align: middle;
   font-family: var(--font-family);
   font-size: var(--fs-base);
   font-weight: var(--fw-400);

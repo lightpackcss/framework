@@ -60,7 +60,6 @@ input[type="radio"] {
     accent-color: var(--color-primary);
     width: 1.1em;
     height: 1.1em;
-    margin-right: var(--g-2);
     vertical-align: middle;
     border-radius: var(--radius-sm);
     border: 1px solid var(--gray-light);

@@ -526,6 +526,26 @@
 .shadow-lg { box-shadow: var(--shadow-lg) !important; }
 
 /* Width, Height, Max-Width, Max-Height Utilities */
+.w-1 { width: var(--g-1) !important; }
+.w-2 { width: var(--g-2) !important; }
+.w-3 { width: var(--g-3) !important; }
+.w-4 { width: var(--g-4) !important; }
+.w-5 { width: var(--g-5) !important; }
+.w-6 { width: var(--g-6) !important; }
+.w-7 { width: var(--g-7) !important; }
+.w-8 { width: var(--g-8) !important; }
+.w-9 { width: var(--g-9) !important; }
+
+.h-1 { height: var(--g-1) !important; }
+.h-2 { height: var(--g-2) !important; }
+.h-3 { height: var(--g-3) !important; }
+.h-4 { height: var(--g-4) !important; }
+.h-5 { height: var(--g-5) !important; }
+.h-6 { height: var(--g-6) !important; }
+.h-7 { height: var(--g-7) !important; }
+.h-8 { height: var(--g-8) !important; }
+.h-9 { height: var(--g-9) !important; }
+
 .w-100 { width: 100% !important; }
 .w-xs { width: var(--container-xs) !important; }
 .w-sm { width: var(--container-sm) !important; }

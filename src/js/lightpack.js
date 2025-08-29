@@ -255,6 +255,33 @@
     }
   };
 
+  Lightpack.initCollapsibles = function(root = document) {
+    root.querySelectorAll('.collapsible').forEach(function(collapsible) {
+      const mode = collapsible.getAttribute('data-collapse') || 'multi';
+      const items = collapsible.querySelectorAll('.collapse-item');
+      items.forEach(function(item) {
+        const toggle = item.querySelector('.collapse-toggle');
+        const content = item.querySelector('.collapse-content');
+        if (!toggle || !content) return;
+        toggle.addEventListener('click', function() {
+          const isOpen = content.classList.contains('open');
+          if (mode === 'accordion') {
+            // Close all
+            collapsible.querySelectorAll('.collapse-content').forEach(p => p.classList.remove('open'));
+            collapsible.querySelectorAll('.collapse-toggle').forEach(h => h.classList.remove('open'));
+            if (!isOpen) {
+              content.classList.add('open');
+              toggle.classList.add('open');
+            }
+          } else {
+            content.classList.toggle('open');
+            toggle.classList.toggle('open');
+          }
+        });
+      });
+    });
+  };
+
   // Master init
   Lightpack.initAll = function(root = document) {
     Lightpack.initTheme();
@@ -264,6 +291,7 @@
     Lightpack.initModals(root);
     Lightpack.initPasswordToggles(root);
     Lightpack.initDrawers(root);
+    Lightpack.initCollapsibles(root);
     // ...add more initializers here as needed
   };
 

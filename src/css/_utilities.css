@@ -291,6 +291,14 @@
 .items-baseline { align-items: baseline !important; }
 .items-stretch { align-items: stretch !important; }
 
+/* Vertical Align Utilities */
+.align-baseline { vertical-align: baseline !important; }
+.align-top { vertical-align: top !important; }
+.align-middle { vertical-align: middle !important; }
+.align-bottom { vertical-align: bottom !important; }
+.align-text-top { vertical-align: text-top !important; }
+.align-text-bottom { vertical-align: text-bottom !important; }
+
 .content-start { align-content: flex-start !important; }
 .content-center { align-content: center !important; }
 .content-end { align-content: flex-end !important; }

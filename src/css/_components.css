@@ -30,13 +30,14 @@
 @import url('./components/_spinner.css');
 @import url('./components/_breadcrumb.css');
 
-/* Modal, Tabs, Navbar, Dropdown, Pagination, Drawer */
+/* Modal, Tabs, Navbar, Dropdown, Pagination, Drawer, Collapse */
 @import url('./components/_modal.css');
 @import url('./components/_tabs.css');
 @import url('./components/_navbar.css');
 @import url('./components/_dropdown.css');
 @import url('./components/_pagination.css');
 @import url('./components/_drawer.css');
+@import url('./components/_collapse.css');
 
 /* Avatar, Media, Tooltip, Toast */
 @import url('./components/_avatar.css');

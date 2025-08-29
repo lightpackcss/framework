@@ -12,7 +12,7 @@ label {
     color: var(--color-text);
 }
 
-input:not([type="checkbox"]):not([type="radio"]):focus,
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
     width: 100%;

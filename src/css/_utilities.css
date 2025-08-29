@@ -218,6 +218,13 @@
 .left-8 { left: var(--g-8) !important; }
 .left-9 { left: var(--g-9) !important; }
 
+/* Centering Utility */
+.center-content {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 /* Layout Utilities */
 .d-block { display: block !important; }
 .d-inline { display: inline !important; }

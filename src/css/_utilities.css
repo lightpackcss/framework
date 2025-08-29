@@ -225,19 +225,19 @@
 .d-none { display: none !important; }
 
 /* Responsive Display Utilities */
-@media (min-width: var(--breakpoint-sm)) {
+@media (min-width: 640) {
   .d-block-sm { display: block !important; }
   .d-none-sm { display: none !important; }
 }
-@media (min-width: var(--breakpoint-md)) {
+@media (min-width: 768) {
   .d-block-md { display: block !important; }
   .d-none-md { display: none !important; }
 }
-@media (min-width: var(--breakpoint-lg)) {
+@media (min-width: 1024) {
   .d-block-lg { display: block !important; }
   .d-none-lg { display: none !important; }
 }
-@media (min-width: var(--breakpoint-xl)) {
+@media (min-width: 1280) {
   .d-block-xl { display: block !important; }
   .d-none-xl { display: none !important; }
 }

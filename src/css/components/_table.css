@@ -10,6 +10,55 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* Responsive table variants using custom breakpoints */
+@media (max-width: 640px) {
+  .table-responsive-sm {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive-sm .table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-responsive-md {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive-md .table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .table-responsive-lg {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive-lg .table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .table-responsive-xl {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive-xl .table {
+    min-width: 600px;
+  }
+}
+
 @media (max-width: 768px) {
   .table {
     min-width: 600px;

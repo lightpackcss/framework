@@ -19,8 +19,17 @@
   - data-collapse="accordion": only one section open at a time
 */
 .collapse-content {
-  display: none;
+    display: none;
 }
+
 .collapse-content.open {
-  display: block;
+    display: block;
+}
+
+.collapse-indicator .collapse-icon {
+    transition: transform 0.2s;
+}
+
+.collapse-indicator.open .collapse-icon {
+    transform: rotate(90deg);
 }

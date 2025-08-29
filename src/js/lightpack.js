@@ -267,10 +267,12 @@
         function updateIndicator(isOpen) {
           if (!indicator) return;
           indicator.classList.toggle('open', isOpen);
-          // Use custom text if provided, else default to +/-
-          const openVal = indicator.dataset.open || '-';
-          const closedVal = indicator.dataset.closed || '+';
-          indicator.textContent = isOpen ? openVal : closedVal;
+          // Only set textContent if indicator is text-only (no children)
+          if (indicator.childElementCount === 0) {
+            const openVal = indicator.dataset.open || '-';
+            const closedVal = indicator.dataset.closed || '+';
+            indicator.textContent = isOpen ? openVal : closedVal;
+          }
         }
         // Set initial state
         updateIndicator(content.classList.contains('open'));
@@ -285,8 +287,10 @@
               const i = t && t.querySelector('.collapse-indicator');
               if (i) {
                 i.classList.remove('open');
-                const closedVal = i.dataset.closed || '+';
-                i.textContent = closedVal;
+                if (i.childElementCount === 0) {
+                  const closedVal = i.dataset.closed || '+';
+                  i.textContent = closedVal;
+                }
               }
             });
             collapsible.querySelectorAll('.collapse-toggle').forEach(h => h.classList.remove('open'));

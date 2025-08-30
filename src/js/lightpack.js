@@ -329,4 +329,20 @@
     Lightpack.initAll();
   });
 
+  /**
+   * Lightpack.toggleClasses(targetSelector, classNames)
+   * Toggle one or more classes on any target element(s).
+   * - targetSelector: CSS selector string for target(s)
+   * - classNames: string or array of class names to toggle
+   */
+  Lightpack.toggleClasses = function (targetSelector, classNames) {
+    if (!targetSelector || !classNames) return;
+    const targets = Array.from(document.querySelectorAll(targetSelector));
+    const classes = Array.isArray(classNames) ? classNames : classNames.split(/\s+/);
+    targets.forEach(target => {
+      classes.forEach(cls => {
+        if (cls) target.classList.toggle(cls);
+      });
+    });
+  };
 })(window);

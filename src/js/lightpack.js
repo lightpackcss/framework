@@ -309,6 +309,39 @@
     });
   };
 
+  /**
+   * Smart dropdown placement: prevents overflow from viewport edges.
+   * Adds .dropdown-menu--right or .dropdown-menu--up as needed.
+   */
+  Lightpack.initDropdowns = function (root = document) {
+    root.querySelectorAll('.dropdown').forEach(function (dropdown) {
+      const menu = dropdown.querySelector('.dropdown-menu');
+      if (!menu) return;
+      // Listen for mouseenter and focusin (keyboard)
+      function handleOpen() {
+        // Reset classes
+        menu.classList.remove('dropdown-menu--right', 'dropdown-menu--up');
+        const rect = menu.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        // Check right overflow
+        if (rect.right > vw) {
+          menu.classList.add('dropdown-menu--right');
+        }
+        // Check bottom overflow
+        if (rect.bottom > vh) {
+          menu.classList.add('dropdown-menu--up');
+        }
+      }
+      // Listen for open events (hover/focus)
+      dropdown.addEventListener('mouseenter', handleOpen);
+      dropdown.addEventListener('focusin', handleOpen);
+      // Also on window resize (if open)
+      window.addEventListener('resize', function () {
+        if (menu.offsetParent !== null) handleOpen();
+      });
+    });
+  };
 
   // Master init
   Lightpack.initAll = function (root = document) {
@@ -320,9 +353,9 @@
     Lightpack.initPasswordToggles(root);
     Lightpack.initDrawers(root);
     Lightpack.initCollapsibles(root);
+    Lightpack.initDropdowns(root);
     // ...add more initializers here as needed
   };
-
 
   // Auto-init on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function () {
@@ -345,4 +378,5 @@
       });
     });
   };
+
 })(window);

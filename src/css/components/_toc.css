@@ -1,0 +1,32 @@
+/* Container */
+.toc {
+    font-size: var(--fs-sm);
+    max-width: 300px;
+}
+
+/* List style */
+.toc ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1em;
+}
+
+/* ToC links */
+.toc a {
+    display: block;
+    color: var(--color-text);
+    padding: 0.25em 0.5em;
+}
+
+/* Active link */
+.toc a.toc-active {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Nested lists */
+.toc li ul {
+    margin-left: 1em;
+    border-left: 2px solid var(--color-border, #eee);
+    padding-left: 0.75em;
+}

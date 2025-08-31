@@ -380,34 +380,26 @@
   };
 
   /**
-   * Lightpack.generateToC(targetSelector, options)
+   * Lightpack.generateToc(targetSelector, options)
    * Programmatically generates a Table of Contents from headings.
    * options: {
-   *   contentSelector: string (default: 'body'),
    *   levels: array (e.g. [2,3,4]) or string (e.g. 'h2,h3'),
-   *   listType: 'ul' | 'ol' (default: 'ul'),
    *   scrollOffset: number (default: 0),
    *   activeClass: string (default: 'toc-active'),
-   *   headingLinkClass: string (default: '')
    * }
    */
-  Lightpack.generateToC = function(targetSelector, options = {}) {
+  Lightpack.generateToc = function(targetSelector, options = {}) {
     const tocContainer = document.querySelector(targetSelector);
     if (!tocContainer) return;
-    const contentSelector = options.contentSelector || 'body';
-    const content = document.querySelector(contentSelector);
-    if (!content) return;
     let levels = options.levels || [2,3,4,5,6];
     if (typeof levels === 'string') {
       levels = levels.replace(/h/gi, '').split(',').map(Number);
     }
-    const listType = options.listType === 'ol' ? 'ol' : 'ul';
     const scrollOffset = options.scrollOffset || 0;
     const activeClass = options.activeClass || 'toc-active';
-    const headingLinkClass = options.headingLinkClass || '';
-    // 1. Find headings
+    // 1. Find headings (from document.body)
     const selector = levels.map(l => `h${l}`).join(',');
-    const headings = Array.from(content.querySelectorAll(selector));
+    const headings = Array.from(document.body.querySelectorAll(selector));
     if (!headings.length) {
       tocContainer.innerHTML = '';
       return;
@@ -438,13 +430,12 @@
       return tree;
     }
     function renderList(nodes) {
-      const list = document.createElement(listType);
+      const list = document.createElement('ul');
       nodes.forEach(node => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = '#' + node.el.id;
         a.textContent = node.el.textContent;
-        if (headingLinkClass) a.className = headingLinkClass;
         li.appendChild(a);
         if (node.children.length) {
           li.appendChild(renderList(node.children));

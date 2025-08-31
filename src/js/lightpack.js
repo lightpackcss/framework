@@ -379,4 +379,106 @@
     });
   };
 
+  /**
+   * Lightpack.generateToc(targetSelector, options)
+   * Programmatically generates a Table of Contents from headings.
+   * options: {
+   *   levels: array (e.g. [2,3,4]) or string (e.g. 'h2,h3'),
+   *   scrollOffset: number (default: 0),
+   *   activeClass: string (default: 'toc-active'),
+   * }
+   */
+  Lightpack.generateToc = function(targetSelector, options = {}) {
+    const tocContainer = document.querySelector(targetSelector);
+    if (!tocContainer) return;
+    let levels = options.levels || [2,3,4,5,6];
+    if (typeof levels === 'string') {
+      levels = levels.replace(/h/gi, '').split(',').map(Number);
+    }
+    const scrollOffset = options.scrollOffset || 0;
+    const activeClass = options.activeClass || 'toc-active';
+    // 1. Find headings (from document.body)
+    const selector = levels.map(l => `h${l}`).join(',');
+    const headings = Array.from(document.body.querySelectorAll(selector));
+    if (!headings.length) {
+      tocContainer.innerHTML = '';
+      return;
+    }
+    // 2. Ensure IDs on headings
+    headings.forEach((h, i) => {
+      if (!h.id) {
+        h.id = 'toc-heading-' + (i+1);
+      }
+    });
+    // 3. Build ToC tree
+    function buildTree(headings) {
+      const tree = [];
+      const stack = [];
+      headings.forEach(h => {
+        const level = parseInt(h.tagName[1]);
+        const node = {el: h, level, children: []};
+        while (stack.length && stack[stack.length-1].level >= level) {
+          stack.pop();
+        }
+        if (stack.length) {
+          stack[stack.length-1].children.push(node);
+        } else {
+          tree.push(node);
+        }
+        stack.push(node);
+      });
+      return tree;
+    }
+    function renderList(nodes) {
+      const list = document.createElement('ul');
+      nodes.forEach(node => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + node.el.id;
+        a.textContent = node.el.textContent;
+        li.appendChild(a);
+        if (node.children.length) {
+          li.appendChild(renderList(node.children));
+        }
+        list.appendChild(li);
+      });
+      return list;
+    }
+    const tree = buildTree(headings);
+    tocContainer.innerHTML = '';
+    tocContainer.appendChild(renderList(tree));
+    // 4. Smooth scroll and highlight
+    tocContainer.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const id = decodeURIComponent(this.hash.slice(1));
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.scrollY - scrollOffset;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      });
+    });
+    // 5. Active section highlight
+    function onScroll() {
+      let activeId = null;
+      for (let i = headings.length - 1; i >= 0; i--) {
+        const h = headings[i];
+        if (window.scrollY + scrollOffset + 1 >= h.offsetTop) {
+          activeId = h.id;
+          break;
+        }
+      }
+      tocContainer.querySelectorAll('a').forEach(a => {
+        if (a.hash === '#' + activeId) {
+          a.classList.add(activeClass);
+        } else {
+          a.classList.remove(activeClass);
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  };
+
 })(window);

@@ -38,6 +38,7 @@
 @import url('./components/_pagination.css');
 @import url('./components/_drawer.css');
 @import url('./components/_collapse.css');
+@import url('./components/_toc.css');
 
 /* Avatar, Media, Tooltip, Toast */
 @import url('./components/_avatar.css');

@@ -21,12 +21,12 @@ This project is a modern, modular CSS framework with zero build dependencies for
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lightpack CSS Quick Start</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.8-beta/dist/lightpack.min.css">
 </head>
 
 <body>
     <h1>Hello, Lightpack!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.8-beta/dist/lightpack.min.js"></script>
 </body>
 
 </html>
@@ -37,10 +37,10 @@ This project is a modern, modular CSS framework with zero build dependencies for
 ### CDN
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.8-beta/dist/lightpack.min.css">
 
 <!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.7-beta/dist/lightpack.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@lightpackcss/framework@v0.1.8-beta/dist/lightpack.min.js"></script>
 ```
 
 ### npm

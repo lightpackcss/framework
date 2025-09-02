@@ -1,6 +1,6 @@
 {
   "name": "@lightpackcss/framework",
-  "version": "0.1.8-beta",
+  "version": "0.1.9-beta",
   "description": "No compilers. No fuss. Just Native CSS + JavaScript components that work — from themes to tabs, toasts, drawers & more.",
   "author": "Pradeep Tiwari",
   "repository": {

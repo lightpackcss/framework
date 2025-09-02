@@ -46,7 +46,7 @@ select[disabled] {
 }
 
 /* Small variant for form controls */
-input.input-sm,
+input:not([type="checkbox"]):not([type="radio"]).input-sm,
 select.input-sm,
 textarea.input-sm {
     padding: var(--g-1);

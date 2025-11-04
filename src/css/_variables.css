@@ -111,18 +111,39 @@
     Example: Add .theme-dark to <body> to activate dark mode.
   */
 
-  /* Dark Theme */
+  /* Enhanced Dark Theme */
   .theme-dark {
-    --color-background: var(--black-dark);
-    --color-surface: var(--gray-dark);
-    --color-surface-dark: var(--black);
-    --color-surface-alt: var(--gray);
-    --color-border: var(--gray);
-    --color-border-dark: var(--gray-light);
-    --color-muted: var(--gray);
-    --color-text: var(--white);
-    --color-text-muted: var(--gray-light);
-    --color-primary: #3068d2;
+    /* Main backgrounds */
+    --color-background: #181e2a;          /* Main app background (darker, more neutral) */
+    --color-surface: #23293a;             /* Card/table/sidebar backgrounds (distinct from main bg) */
+    --color-surface-dark: #131622;        /* Deepest background for overlays */
+    --color-surface-alt: #23293a;         /* Alt surface for table rows, etc. */
+    /* Borders & dividers */
+    --color-border: rgba(255,255,255,0.07);    /* Subtle but visible white border */
+    --color-border-dark: rgba(255,255,255,0.13); /* Slightly stronger for emphasis */
+    /* Muted & accent backgrounds */
+    --color-muted: #23293a;               /* For muted/secondary backgrounds */
+    /* Text colors */
+    --color-text: #f3f6fa;                /* Main text (almost white) */
+    --color-text-muted: #aeb9cb;          /* Muted text */
+    --color-text-inverse: #fff;        /* For chips, buttons, etc. */
+    /* Primary & accent colors */
+    --color-primary: #4f8cff;             /* Brighter blue for buttons/links */
+    --color-primary-light: #6baaff;
+    --color-primary-dark: #3068d2;
+    --color-success: #22c55e;
+    --color-warning: #fbbf24;
+    --color-danger: #ef4444;
+    --color-info: #14b8a6;
+    /* Status backgrounds for pills */
+    --color-success-light: #24392b;
+    --color-warning-light: #3a2e1a;
+    --color-danger-light: #3a2323;
+    --color-info-light: #1a373a;
+    /* Shadows (lighter for dark bg) */
+    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.25);
+    --shadow-md: 0 4px 12px -1px rgba(0,0,0,0.35);
+    --shadow-lg: 0 10px 24px -3px rgba(0,0,0,0.45);
   }
 
   /* Typography */

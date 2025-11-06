@@ -50,12 +50,12 @@
 
 .navbar-link:hover,
 .navbar-link:focus {
-  color: var(--blue);
+  color: var(--color-primary);
   outline: none;
 }
 
 .navbar-link.active {
-  color: var(--blue);
+  color: var(--color-primary);
 }
 
 .navbar-actions {

@@ -9,20 +9,21 @@
   align-items: center;
   gap: var(--g-2);
   font-size: var(--fs-sm);
-  color: var(--color-muted);
+  color: var(--color-text-muted);
 }
 .breadcrumb a {
-  color: var(--color-primary);
+  color: var(--color-text);
   text-decoration: none;
   transition: color 0.15s;
 }
 .breadcrumb a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 }
 .breadcrumb-sep {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   user-select: none;
 }
 .breadcrumb-current {
-  color: var(--color-text);
+  color: var(--color-text-muted);
+  font-weight: var(--fw-500);
 }

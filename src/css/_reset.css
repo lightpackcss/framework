@@ -15,7 +15,11 @@ body {
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: var(--fs-base);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--fw-400);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   margin: 0;
   padding: 0;
 }
@@ -28,8 +32,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--fw-700);
   margin-top: var(--g-4);
   margin-bottom: var(--g-2);
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text);
 }
+
+h1 { font-size: var(--fs-4xl); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-base); font-weight: var(--fw-600); }
 
 p {
   margin-top: 0;
@@ -37,7 +50,7 @@ p {
 }
 
 a {
-  color: var(--blue);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -47,7 +60,7 @@ a:not([class]) {
 }
 
 a:hover {
-  color: var(--blue-dark);
+  color: var(--color-primary-dark);
 }
 
 hr {
@@ -71,6 +84,49 @@ img, picture, svg {
 
 input, button, textarea, select {
   font: inherit;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.125em 0.25em;
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+}
+
+pre {
+  padding: var(--g-3);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+strong, b {
+  font-weight: var(--fw-700);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--fs-sm);
+}
+
+mark {
+  background-color: var(--color-warning-lighter);
+  color: var(--color-text);
+  padding: 0.125em 0.25em;
 }
 
 input:-webkit-autofill,

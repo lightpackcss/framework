@@ -524,6 +524,8 @@
 .fw-500 { font-weight: var(--fw-500) !important; }
 .fw-600 { font-weight: var(--fw-600) !important; }
 .fw-700 { font-weight: var(--fw-700) !important; }
+.fw-800 { font-weight: var(--fw-800) !important; }
+.fw-900 { font-weight: var(--fw-900) !important; }
 
 /* Text Alignment */
 .text-left { text-align: left !important; }
@@ -894,5 +896,5 @@
 .text-border { color: var(--color-border) !important; }
 .text-border-dark { color: var(--color-border-dark) !important; }
 .text { color: var(--color-text) !important; }
-.text-muted { color: var(--color-muted) !important; }
+.text-muted { color: var(--color-text-muted) !important; }
 .text-inverse { color: var(--color-text-inverse) !important; }

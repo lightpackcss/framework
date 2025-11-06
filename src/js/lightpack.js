@@ -250,8 +250,6 @@
     const savedTheme = localStorage.getItem('lightpack-theme');
     if (savedTheme === 'theme-dark') {
       document.body.classList.add('theme-dark');
-    } else {
-      document.body.classList.remove('theme-dark');
     }
   };
 

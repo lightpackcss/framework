@@ -4,25 +4,25 @@
   All CSS custom properties (variables) for theming and design tokens.
 */
 :root {
-  /* Colors */
-  --red: #ef4444;
-  --red-light: #fca5a5;
-  --red-lighter: #fee2e2;
-  --red-dark: #b91c1c;
-  --pink: #ec4899;
-  --pink-light: #f9a8d4;
+  /* Colors - More muted and professional palette */
+  --red: #dc2626;
+  --red-light: #f87171;
+  --red-lighter: #fef2f2;
+  --red-dark: #991b1b;
+  --pink: #db2777;
+  --pink-light: #f472b6;
   --pink-lighter: #fdf2f8;
-  --pink-dark: #be185d;
-  --orange: #f59e42;
-  --orange-light: #fdba74;
+  --pink-dark: #9f1239;
+  --orange: #ea580c;
+  --orange-light: #fb923c;
   --orange-lighter: #fff7ed;
-  --orange-dark: #b45309;
-  --yellow: #fde047;
-  --yellow-light: #fef9c3;
+  --orange-dark: #c2410c;
+  --yellow: #eab308;
+  --yellow-light: #facc15;
   --yellow-lighter: #fefce8;
   --yellow-dark: #a16207;
-  --green: #22c55e;
-  --green-light: #86efac;
+  --green: #16a34a;
+  --green-light: #4ade80;
   --green-lighter: #f0fdf4;
   --green-dark: #15803d;
   --teal: #14b8a6;
@@ -56,16 +56,16 @@
   --white: #fff;
   --muted: #f1f5f9;
 
-  /* Semantic Color Palette */
-  --color-primary-lighter: var(--blue-lighter);
-  --color-primary-light: var(--blue-light);
-  --color-primary: var(--blue);
-  --color-primary-dark: var(--blue-dark);
+  /* Semantic Color Palette - shadcn-inspired (black/dark primary in light mode) */
+  --color-primary-lighter: var(--gray-lighter);
+  --color-primary-light: var(--gray-light);
+  --color-primary: var(--black);
+  --color-primary-dark: var(--black-dark);
 
-  --color-secondary-lighter: var(--indigo-lighter);
-  --color-secondary-light: var(--indigo-light);
-  --color-secondary: var(--indigo);
-  --color-secondary-dark: var(--indigo-dark);
+  --color-secondary-lighter: var(--gray-lighter);
+  --color-secondary-light: var(--gray-light);
+  --color-secondary: var(--gray-dark);
+  --color-secondary-dark: var(--black-light);
 
   --color-success-lighter: var(--green-lighter);
   --color-success-light: var(--green-light);
@@ -87,76 +87,41 @@
   --color-info: var(--teal);
   --color-info-dark: var(--teal-dark);
 
-  --color-accent-lighter: var(--purple-lighter);
-  --color-accent-light: var(--purple-light);
-  --color-accent: var(--purple);
-  --color-accent-dark: var(--purple-dark);
+  --color-accent-lighter: var(--blue-lighter);
+  --color-accent-light: var(--blue-light);
+  --color-accent: var(--blue);
+  --color-accent-dark: var(--blue-dark);
 
   --color-background: var(--white);
-  --color-surface: var(--muted);
+  --color-surface: var(--gray-lighter);
   --color-surface-dark: var(--black-dark);
-  --color-surface-alt: var(--gray-lighter);
+  --color-surface-alt: var(--muted);
   --color-border: var(--gray-light);
   --color-border-dark: var(--gray-dark);
   --color-muted: var(--muted);
-  --color-text: var(--gray-dark);
+  --color-text: var(--black);
   --color-text-muted: var(--gray);
   --color-text-inverse: var(--white);
 
-  /*
-    =============================
-    Theme Overrides
-    =============================
-    To enable theming, override only semantic color variables inside theme classes.
-    Example: Add .theme-dark to <body> to activate dark mode.
-  */
-
-  /* Enhanced Dark Theme */
-  .theme-dark {
-    /* Main backgrounds */
-    --color-background: #181e2a;          /* Main app background (darker, more neutral) */
-    --color-surface: #23293a;             /* Card/table/sidebar backgrounds (distinct from main bg) */
-    --color-surface-dark: #131622;        /* Deepest background for overlays */
-    --color-surface-alt: #23293a;         /* Alt surface for table rows, etc. */
-    /* Borders & dividers */
-    --color-border: rgba(255,255,255,0.07);    /* Subtle but visible white border */
-    --color-border-dark: rgba(255,255,255,0.13); /* Slightly stronger for emphasis */
-    /* Muted & accent backgrounds */
-    --color-muted: #23293a;               /* For muted/secondary backgrounds */
-    /* Text colors */
-    --color-text: #f3f6fa;                /* Main text (almost white) */
-    --color-text-muted: #aeb9cb;          /* Muted text */
-    --color-text-inverse: #fff;        /* For chips, buttons, etc. */
-    /* Primary & accent colors */
-    --color-primary: #4f8cff;             /* Brighter blue for buttons/links */
-    --color-primary-light: #6baaff;
-    --color-primary-dark: #3068d2;
-    --color-success: #22c55e;
-    --color-warning: #fbbf24;
-    --color-danger: #ef4444;
-    --color-info: #14b8a6;
-    /* Status backgrounds for pills */
-    --color-success-light: #24392b;
-    --color-warning-light: #3a2e1a;
-    --color-danger-light: #3a2323;
-    --color-info-light: #1a373a;
-    /* Shadows (lighter for dark bg) */
-    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.25);
-    --shadow-md: 0 4px 12px -1px rgba(0,0,0,0.35);
-    --shadow-lg: 0 10px 24px -3px rgba(0,0,0,0.45);
-  }
-
-  /* Typography */
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Typography - Modern system font stack with fallbacks */
+  --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family: var(--font-family-sans);
   
-  --fs-xs: 0.75rem;
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
-  --fs-lg: 1.25rem;
-  --fs-xl: 1.5rem;
-  --fs-2xl: 2rem;
-  --fs-3xl: 3rem;
+  /* Font sizes - Modular scale (1.25 ratio) for better hierarchy */
+  --fs-xs: 0.75rem;      /* 12px */
+  --fs-sm: 0.875rem;     /* 14px */
+  --fs-base: 1rem;       /* 16px */
+  --fs-md: 1.125rem;     /* 18px */
+  --fs-lg: 1.25rem;      /* 20px */
+  --fs-xl: 1.5rem;       /* 24px */
+  --fs-2xl: 1.875rem;    /* 30px */
+  --fs-3xl: 2.25rem;     /* 36px */
+  --fs-4xl: 3rem;        /* 48px */
+  --fs-5xl: 3.75rem;     /* 60px */
 
+  /* Font weights  */
   --fw-100: 100;
   --fw-200: 200;
   --fw-300: 300;
@@ -164,8 +129,24 @@
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
 
-  --line-height-base: 1.6;
+  /* Line heights - Optimized for readability */
+  --line-height-base: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Letter spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
 
   /* Gappings */
   --g-1: 0.25rem;
@@ -218,4 +199,75 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
+}
+
+/*
+  =============================
+  Dark Theme
+  =============================
+  Enhanced dark theme with shadcn-inspired approach.
+  Apply .theme-dark class to <body> to activate.
+*/
+.theme-dark {
+  /* Main backgrounds */
+  --color-background: #0a0a0a;          /* Main app background (true dark) */
+  --color-surface: #171717;             /* Card/table/sidebar backgrounds */
+  --color-surface-dark: #000000;        /* Deepest background for overlays */
+  --color-surface-alt: #1f1f1f;         /* Alt surface for table rows, etc. */
+  
+  /* Borders & dividers */
+  --color-border: rgba(255,255,255,0.1);     /* Subtle but visible white border */
+  --color-border-dark: rgba(255,255,255,0.2); /* Slightly stronger for emphasis */
+  
+  /* Muted & accent backgrounds */
+  --color-muted: #262626;               /* For muted/secondary backgrounds */
+  
+  /* Text colors */
+  --color-text: #fafafa;                /* Main text (almost white) */
+  --color-text-muted: #a3a3a3;          /* Muted text */
+  --color-text-inverse: #0a0a0a;        /* For buttons with light backgrounds */
+  
+  /* Primary colors - white/light in dark mode (shadcn approach) */
+  --color-primary: #fafafa;             /* White/light primary for dark mode */
+  --color-primary-light: #ffffff;       /* Pure white for hover states */
+  --color-primary-lighter: #e5e5e5;     /* Slightly darker for backgrounds */
+  --color-primary-dark: #d4d4d4;        /* Darker variant */
+  
+  /* Secondary colors */
+  --color-secondary: #a3a3a3;
+  --color-secondary-light: #d4d4d4;
+  --color-secondary-lighter: #e5e5e5;
+  --color-secondary-dark: #737373;
+  
+  /* Accent colors - blue accent for interactive elements */
+  --color-accent: #3b82f6;
+  --color-accent-light: #60a5fa;
+  --color-accent-lighter: #93c5fd;
+  --color-accent-dark: #2563eb;
+  
+  /* Status colors */
+  --color-success: #22c55e;
+  --color-success-light: #4ade80;
+  --color-success-lighter: #86efac;
+  --color-success-dark: #16a34a;
+  
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-lighter: #fcd34d;
+  --color-warning-dark: #d97706;
+  
+  --color-danger: #ef4444;
+  --color-danger-light: #f87171;
+  --color-danger-lighter: #fca5a5;
+  --color-danger-dark: #dc2626;
+  
+  --color-info: #06b6d4;
+  --color-info-light: #22d3ee;
+  --color-info-lighter: #67e8f9;
+  --color-info-dark: #0891b2;
+  
+  /* Shadows (lighter for dark bg) */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px -1px rgba(0,0,0,0.6);
+  --shadow-lg: 0 10px 24px -3px rgba(0,0,0,0.7);
 }

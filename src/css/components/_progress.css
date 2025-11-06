@@ -3,7 +3,7 @@
   -------------------------------------
 */
 .progress {
-  background: var(--gray-light);
+  background: var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   height: 1rem;
@@ -16,7 +16,7 @@
 }
 
 .progress-bar {
-  background: var(--blue);
+  background: var(--color-accent);
   height: 100%;
   width: 0;
   transition: width 0.4s;
@@ -45,7 +45,7 @@
 }
 
 .progress-bar-primary {
-  background: var(--blue);
+  background: var(--color-primary);
   color: var(--white);
 }
 

@@ -27,6 +27,6 @@
 /* Nested lists */
 .toc li ul {
     margin-left: 1em;
-    border-left: 2px solid var(--color-border, #eee);
+    border-left: 2px solid var(--color-border);
     padding-left: 0.75em;
 }

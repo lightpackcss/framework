@@ -104,7 +104,6 @@
 .table-hover tbody tr:hover {
   background: var(--color-surface);
   color: var(--color-text);
-  cursor: pointer;
 }
 
 /* Dark mode specific hover - more visible */

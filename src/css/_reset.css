@@ -129,35 +129,6 @@ mark {
   padding: 0.125em 0.25em;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:active {
-  box-shadow: 0 0 0 1000px var(--white) inset !important;
-  -webkit-text-fill-color: var(--black) !important;
-  transition: background-color 5000s ease-in-out 0s;
-  border: 1px solid var(--color-border) !important;
-}
-
-input:-webkit-autofill:focus {
-  box-shadow: 0 0 0 1000px var(--white) inset, 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
-  -webkit-text-fill-color: var(--black) !important;
-  border-color: var(--color-primary) !important;
-}
-
-.theme-dark input:-webkit-autofill,
-.theme-dark input:-webkit-autofill:hover,
-.theme-dark input:-webkit-autofill:active {
-  box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
-  -webkit-text-fill-color: var(--color-text) !important;
-  border: 1px solid var(--color-border) !important;
-}
-
-.theme-dark input:-webkit-autofill:focus {
-  box-shadow: 0 0 0 1000px var(--color-surface) inset, 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
-  -webkit-text-fill-color: var(--color-text) !important;
-  border-color: var(--color-primary) !important;
-}
-
 /* Theme-aware anchor links */
 a {
   color: var(--color-primary);

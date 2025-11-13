@@ -34,7 +34,7 @@ textarea {
 input:not([type="checkbox"]):not([type="radio"]):focus,
 textarea:focus,
 select:focus {
-    border-color: var(--color-primary);
+    border-color: var(--color-border-dark);
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     outline: none;
 }

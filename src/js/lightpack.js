@@ -309,35 +309,59 @@
 
   /**
    * Smart dropdown placement: prevents overflow from viewport edges.
-   * Adds .dropdown-menu--right or .dropdown-menu--up as needed.
+   * Uses position:fixed to avoid parent overflow:hidden clipping.
+   * Calculates position based on trigger element's screen position.
    */
   Lightpack.initDropdowns = function (root = document) {
     root.querySelectorAll('.dropdown').forEach(function (dropdown) {
       const menu = dropdown.querySelector('.dropdown-menu');
       if (!menu) return;
-      // Listen for mouseenter and focusin (keyboard)
-      function handleOpen() {
+      
+      function positionMenu() {
         // Reset classes
         menu.classList.remove('dropdown-menu--right', 'dropdown-menu--up');
-        const rect = menu.getBoundingClientRect();
+        
+        // Get trigger position
+        const triggerRect = dropdown.getBoundingClientRect();
         const vw = window.innerWidth;
         const vh = window.innerHeight;
+        
+        // Default: position below trigger, aligned left
+        let top = triggerRect.bottom + 1;
+        let left = triggerRect.left;
+        
+        // Set initial position
+        menu.style.top = top + 'px';
+        menu.style.left = left + 'px';
+        
+        // Get menu dimensions after positioning
+        const menuRect = menu.getBoundingClientRect();
+        
         // Check right overflow
-        if (rect.right > vw) {
+        if (menuRect.right > vw) {
           menu.classList.add('dropdown-menu--right');
+          left = triggerRect.right - menuRect.width;
+          menu.style.left = Math.max(8, left) + 'px';
         }
+        
         // Check bottom overflow
-        if (rect.bottom > vh) {
+        if (menuRect.bottom > vh) {
           menu.classList.add('dropdown-menu--up');
+          top = triggerRect.top - menuRect.height - 1;
+          menu.style.top = Math.max(8, top) + 'px';
         }
       }
-      // Listen for open events (hover/focus)
-      dropdown.addEventListener('mouseenter', handleOpen);
-      dropdown.addEventListener('focusin', handleOpen);
-      // Also on window resize (if open)
-      window.addEventListener('resize', function () {
-        if (menu.offsetParent !== null) handleOpen();
-      });
+      
+      // Position on open events (hover/focus)
+      dropdown.addEventListener('mouseenter', positionMenu);
+      dropdown.addEventListener('focusin', positionMenu);
+      
+      // Reposition on window resize/scroll if open
+      function repositionIfOpen() {
+        if (menu.offsetParent !== null) positionMenu();
+      }
+      window.addEventListener('resize', repositionIfOpen);
+      window.addEventListener('scroll', repositionIfOpen, true);
     });
   };
 

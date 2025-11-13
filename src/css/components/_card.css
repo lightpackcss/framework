@@ -43,7 +43,6 @@
   flex: 1 1 auto;
   padding: var(--g-4);
   font-size: var(--fs-base);
-  line-height: var(--line-height-base);
 }
 
 .card-footer {

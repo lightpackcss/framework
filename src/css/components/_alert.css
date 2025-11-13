@@ -9,7 +9,6 @@
   margin-bottom: var(--g-3);
   font-size: var(--fs-sm);
   font-weight: var(--fw-400);
-  line-height: var(--line-height-normal);
   background: var(--color-surface);
   position: relative;
   display: flex;
